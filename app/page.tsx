@@ -19,14 +19,14 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <Hero />
-      <Features />
-      <Screens />
-      <Downloads />
-      <Team />
-      <Footer />
-    </main>
-  )
+		<main className="relative min-h-screen bg-background overflow-hidden">
+			<Header />
+			<Hero />
+			<Features />
+			<Screens />
+			<Downloads />
+			<Team />
+			<Footer />
+		</main>
+	);
 }

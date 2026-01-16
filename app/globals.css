@@ -181,6 +181,112 @@
   .glow-green-intense {
     box-shadow: 0 0 30px rgba(195, 255, 0, 0.5), 0 0 60px rgba(195, 255, 0, 0.3);
   }
+
+  .glass-blob-canvas {
+    position: absolute;
+    inset: -10%;
+    pointer-events: none;
+    filter: saturate(1.08);
+    z-index: 0;
+    --hx: 0%;
+    --hy: 0%;
+    --lx: 50%;
+    --ly: 50%;
+    --gridGlow: 0.22;
+  }
+
+  .glass-blob {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    border-radius: 40%;
+    border: 1px solid rgba(195, 255, 0, 0.12);
+    background:
+      radial-gradient(circle at 30% 30%, rgba(195, 255, 0, 0.58), rgba(0, 70, 32, 0.12) 55%),
+      radial-gradient(circle at 70% 60%, rgba(140, 255, 120, 0.42), rgba(0, 90, 50, 0.1) 60%),
+      radial-gradient(circle at 45% 70%, rgba(60, 160, 90, 0.35), transparent 65%),
+      linear-gradient(135deg, rgba(195, 255, 0, 0.2), rgba(20, 120, 70, 0.1));
+    opacity: 1;
+    filter: blur(36px);
+    backdrop-filter: blur(24px);
+    box-shadow:
+      0 0 60px rgba(195, 255, 0, 0.22),
+      inset 0 0 48px rgba(195, 255, 0, 0.14);
+    mix-blend-mode: screen;
+    --tx: 0%;
+    --ty: 0%;
+    --sc: 1;
+    transform: translate3d(var(--tx), var(--ty), 0) translate3d(var(--hx), var(--hy), 0);
+    transition: transform 380ms ease;
+  }
+
+  .graph-overlay {
+    background-image:
+      repeating-linear-gradient(90deg, rgba(195, 255, 0, 0) 0, rgba(195, 255, 0, 0) 46px, rgba(195, 255, 0, 0.22) 48px, rgba(195, 255, 0, 0.22) 49px, rgba(195, 255, 0, 0) 50px),
+      repeating-linear-gradient(0deg, rgba(195, 255, 0, 0) 0, rgba(195, 255, 0, 0) 46px, rgba(195, 255, 0, 0.22) 48px, rgba(195, 255, 0, 0.22) 49px, rgba(195, 255, 0, 0) 50px),
+      radial-gradient(240px at var(--lx) var(--ly), rgba(195, 255, 0, 0.36), rgba(195, 255, 0, 0.08) 45%, transparent 70%);
+    background-size: 60px 60px, 60px 60px, auto;
+    opacity: calc(0.0 + var(--gridGlow));
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 18px rgba(195, 255, 0, 0.3));
+    transition: opacity 200ms ease, background-position 200ms ease;
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  .blob-1 {
+    width: 46vw;
+    max-width: 680px;
+    min-width: 280px;
+    top: -6%;
+    left: -10%;
+    animation: none;
+  }
+
+  .blob-2 {
+    width: 40vw;
+    max-width: 560px;
+    min-width: 260px;
+    bottom: -4%;
+    right: -6%;
+    animation: none;
+  }
+
+  .blob-3 {
+    width: 34vw;
+    max-width: 500px;
+    min-width: 220px;
+    top: 16%;
+    right: 12%;
+    animation: none;
+  }
+
+  .blob-4 {
+    width: 30vw;
+    max-width: 440px;
+    min-width: 200px;
+    bottom: 12%;
+    left: 18%;
+    animation: none;
+  }
+
+  .blob-5 {
+    width: 28vw;
+    max-width: 420px;
+    min-width: 180px;
+    top: 6%;
+    right: -6%;
+    animation: none;
+  }
+
+  .glass-blob-glare {
+    position: absolute;
+    inset: 8% 12% 18%;
+    border-radius: 28%;
+    background: radial-gradient(circle at 55% 45%, rgba(255, 255, 255, 0.18), transparent 60%);
+    mix-blend-mode: soft-light;
+    opacity: 0.3;
+    filter: blur(48px);
+    animation: none;
+  }
 }
 
 @keyframes fadeIn {
@@ -202,3 +308,5 @@
     transform: translateY(0);
   }
 }
+
+/* animations removed for static blobs; hover-driven movement only */
