@@ -61,6 +61,7 @@ export default function AnimatedGradientBg() {
 				<div className="gradient g5" />
 				<div className="interactive-bubble" />
 			</div>
+			<div className="glowing-grid" />
 		</div>
 	);
 }
