@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import AnimatedGradientBg from "@/components/animated-gradient-bg";
 
 export default function Hero() {
 	const scrollToFeatures = () => {
@@ -15,33 +16,23 @@ export default function Hero() {
 
 	return (
 		<section className="relative min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden">
-			<div className="absolute inset-0 glass-blob-canvas">
-				<div className="glass-blob blob-1" />
-				<div className="glass-blob blob-2" />
-				<div className="glass-blob blob-3" />
-				<div className="glass-blob blob-4" />
-				<div className="glass-blob blob-5" />
-				<div className="glass-blob blob-6" />
-				<div className="glass-blob blob-7" />
-				<div className="glass-blob-glare" />
-			</div>
+			<AnimatedGradientBg />
 
-			<div className="absolute inset-0 grid-background opacity-60 -z-10" />
-			<div className="absolute inset-0 bg-background/82 backdrop-blur-[2px] -z-20" />
-			<div className="max-w-6xl mx-auto w-full text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+			<div className="absolute inset-0 bg-background/40 backdrop-blur-sm -z-10" />
+			<div className="max-w-6xl mx-auto w-full text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 relative z-10">
 				{" "}
 				<div className="flex justify-center">
 					<Image
 						src="/images/nosh-20banner-20-20nobg.png"
 						alt="Nosh"
-					width={350}
-					height={350}
-					className="w-56 sm:w-72 lg:w-96 h-auto"
+						width={350}
+						height={350}
+						className="w-56 sm:w-72 lg:w-96 h-auto"
 						priority
 					/>
 				</div>
 				{/* Description */}
-				<p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+				<p className="text-lg sm:text-xl text-white max-w-2xl mx-auto leading-relaxed">
 					Plan your meals intelligently, track your pantry in real-time, and
 					discover recipes that match what you already have. Say goodbye to food
 					waste.
@@ -67,7 +58,7 @@ export default function Hero() {
 			</div>
 
 			{/* Scroll Indicator */}
-			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce relative z-10">
 				<ChevronDown className="text-primary w-6 h-6" />
 			</div>
 		</section>
