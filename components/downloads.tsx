@@ -2,10 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Apple, Smartphone } from "lucide-react"
+import { Apple, Smartphone, Github } from "lucide-react";
 
 export default function Downloads() {
-  return (
+	return (
 		<section
 			id="downloads"
 			className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8"
@@ -17,7 +17,7 @@ export default function Downloads() {
 						Download Nosh
 					</h2>
 					<p className="text-lg text-muted-foreground">
-						Available on iOS and Android
+						Available on both iOS and Android
 					</p>
 				</div>
 
@@ -34,9 +34,14 @@ export default function Downloads() {
 							Download Nosh from the App Store and start meal planning today.
 							Sync your pantry across all your Apple devices.
 						</p>
-						<Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 hover:glow-yellow transition-all duration-300">
-							Download on App Store
-						</Button>
+						<div className="flex gap-2">
+							<Button
+								size="lg"
+								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-primary/80"
+							>
+								Download for iOS
+							</Button>
+						</div>
 					</Card>
 
 					<Card className="p-8 glass-card border-primary/20 hover:border-primary hover:glow-green transition-all duration-300">
@@ -52,9 +57,14 @@ export default function Downloads() {
 							Get it on Google Play and bring Nosh to your Android device.
 							Manage your meals anywhere, anytime.
 						</p>
-						<Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 hover:glow-yellow transition-all duration-300">
-							Get it on Google Play
-						</Button>
+						<div className="flex gap-2">
+							<Button
+								size="lg"
+								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-primary/80"
+							>
+								Download for Android
+							</Button>
+						</div>
 					</Card>
 				</div>
 

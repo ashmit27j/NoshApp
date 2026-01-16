@@ -24,9 +24,9 @@ export default function Header() {
 						<Image
 							src="/images/WhiteLogo-nobg.png"
 							alt="Nosh Logo"
-							width={40}
-							height={40}
-							className="w-10 h-10 object-contain"
+							width={48}
+							height={48}
+							className="w-15 h-15 object-contain"
 						/>
 					</Link>
 
@@ -36,22 +36,19 @@ export default function Header() {
 							<Link
 								key={item.label}
 								href={item.href}
-								className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
+								className="text-base text-white relative group transition-colors"
 							>
 								{item.label}
+								<span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 ease-out"></span>
 							</Link>
 						))}
 					</nav>
 
 					{/* CTA Buttons */}
 					<div className="hidden md:flex items-center gap-3">
-						<Button variant="outline" className="bg-transparent gap-2">
-							<Github className="w-4 h-4" />
-							View GitHub
-						</Button>
-						<Link href="#downloads">
-							<Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-								Download
+						<Link href="#team">
+							<Button className="border-1 border-white text-white bg-black-20 hover:bg-white hover:text-black transition-colors">
+								Contact Us
 							</Button>
 						</Link>
 					</div>
@@ -73,7 +70,7 @@ export default function Header() {
 							<Link
 								key={item.label}
 								href={item.href}
-								className="block text-base font-medium text-muted-foreground hover:text-foreground py-2 transition-colors"
+								className="block text-base text-muted-foreground hover:text-foreground py-2 transition-colors"
 								onClick={() => setIsOpen(false)}
 							>
 								{item.label}
@@ -82,10 +79,10 @@ export default function Header() {
 						<div className="flex flex-col gap-2 pt-2">
 							<Button
 								variant="outline"
-								className="w-full bg-transparent gap-2"
+								className="w-full bg-transparent"
+								size="icon"
 							>
-								<Github className="w-4 h-4" />
-								View GitHub
+								<Github className="w-5 h-5" fill="currentColor" />
 							</Button>
 							<Link href="#downloads" className="w-full">
 								<Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">

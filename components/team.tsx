@@ -20,161 +20,175 @@ interface TeamMember {
 }
 
 const initialTeam: TeamMember[] = [
-  {
-    name: "Sukhada",
-    role: "Android Developer",
-    email: "sukhada@nosh.app",
-    portfolio: "sukhada.dev",
-    image: undefined,
-    social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
-    },
-  },
-  {
-    name: "Ashmit",
-    role: "iOS Developer",
-    email: "ashmit@nosh.app",
-    portfolio: "ashmit.dev",
-    image: undefined,
-    social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
-    },
-  },
-]
+	{
+		name: "Sukhada",
+		role: "Android Developer",
+		email: "sukhada@nosh.app",
+		portfolio: "sukhada.dev",
+		image: undefined,
+		social: {
+			github: "https://github.com",
+			linkedin: "https://linkedin.com",
+			instagram: "https://instagram.com",
+		},
+	},
+	{
+		name: "Ashmit",
+		role: "iOS Developer",
+		email: "ashmit@nosh.app",
+		portfolio: "https://ashmit27j.github.io/",
+		image: undefined,
+		social: {
+			github: "https://github.com",
+			linkedin: "https://linkedin.com",
+			instagram: "https://instagram.com",
+		},
+	},
+];
 
 export default function Team() {
-  const [team, setTeam] = useState(initialTeam)
+	const [team, setTeam] = useState(initialTeam);
 
-  const handleImageUpload = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (event) => {
-        const newTeam = [...team]
-        newTeam[index].image = event.target?.result as string
-        setTeam(newTeam)
-      }
-      reader.readAsDataURL(file)
-    }
-  }
+	const handleImageUpload = (
+		index: number,
+		e: React.ChangeEvent<HTMLInputElement>
+	) => {
+		const file = e.target.files?.[0];
+		if (file) {
+			const reader = new FileReader();
+			reader.onload = (event) => {
+				const newTeam = [...team];
+				newTeam[index].image = event.target?.result as string;
+				setTeam(newTeam);
+			};
+			reader.readAsDataURL(file);
+		}
+	};
 
-  const removeImage = (index: number) => {
-    const newTeam = [...team]
-    newTeam[index].image = undefined
-    setTeam(newTeam)
-  }
+	const removeImage = (index: number) => {
+		const newTeam = [...team];
+		newTeam[index].image = undefined;
+		setTeam(newTeam);
+	};
 
-  return (
-    <section id="team" className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-card/20">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">Meet the Team</h2>
-          <p className="text-lg text-muted-foreground flex items-center justify-center gap-2">
-            Built with <Heart className="w-5 h-5 fill-primary text-primary" /> by us
-          </p>
-        </div>
+	return (
+		<section
+			id="team"
+			className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-card/20"
+		>
+			<div className="max-w-6xl mx-auto">
+				{/* Section Header */}
+				<div className="text-center space-y-4 mb-16">
+					<h2 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">
+						Meet the Team
+					</h2>
+					<p className="text-lg text-muted-foreground flex items-center justify-center gap-2">
+						Built with <Heart className="w-5 h-5 fill-primary text-primary" />{" "}
+						by us
+					</p>
+				</div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {team.map((member, index) => (
-            <Card
-              key={index}
-              className="p-8 glass-card border-primary/20 hover:border-primary hover:glow-green transition-all duration-300"
-            >
-              {/* Team Member Image Upload Section */}
-              <div className="relative mb-6">
-                {member.image ? (
-                  <div className="relative">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full aspect-square object-cover"
-                    />
-                    <button
-                      onClick={() => removeImage(index)}
-                      className="absolute top-2 right-2 p-2 bg-background/80 hover:bg-background rounded-full transition-colors"
-                    >
-                      <X className="w-4 h-4 text-primary" />
-                    </button>
-                  </div>
-                ) : (
-                  <label className="flex items-center justify-center w-full aspect-square bg-card/50 border border-dashed border-primary/30 rounded cursor-pointer hover:border-primary/60 transition-colors">
-                    <div className="flex flex-col items-center justify-center gap-2">
-                      <div className="text-2xl text-primary/50">+</div>
-                      <span className="text-sm text-muted-foreground">Add photo</span>
-                    </div>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => handleImageUpload(index, e)}
-                      className="hidden"
-                    />
-                  </label>
-                )}
-              </div>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+					{team.map((member, index) => (
+						<Card
+							key={index}
+							className="p-8 glass-card border-primary/20 hover:border-primary hover:glow-green transition-all duration-300"
+						>
+							{/* Team Member Image Upload Section */}
+							<div className="relative mb-6">
+								{member.image ? (
+									<div className="relative">
+										<img
+											src={member.image || "/placeholder.svg"}
+											alt={member.name}
+											className="w-full aspect-square object-cover"
+										/>
+										<button
+											onClick={() => removeImage(index)}
+											className="absolute top-2 right-2 p-2 bg-background/80 hover:bg-background rounded-full transition-colors"
+										>
+											<X className="w-4 h-4 text-primary" />
+										</button>
+									</div>
+								) : (
+									<label className="flex items-center justify-center w-full aspect-square bg-card/50 border border-dashed border-primary/30 rounded cursor-pointer hover:border-primary/60 transition-colors">
+										<div className="flex flex-col items-center justify-center gap-2"></div>
+									</label>
+								)}
+							</div>
 
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="text-primary font-medium">{member.role}</p>
-              </div>
+							<div className="mb-4">
+								<h3 className="text-2xl font-bold text-foreground mb-1">
+									{member.name}
+								</h3>
+								<p className="text-primary font-medium">{member.role}</p>
+							</div>
 
-              <div className="space-y-3 mb-6">
-                <a
-                  href={`mailto:${member.email}`}
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  {member.email}
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  {member.portfolio}
-                </a>
-              </div>
+							<div className="space-y-3 mb-6">
+								<a
+									href={`mailto:${member.email}`}
+									className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+								>
+									<Mail className="w-4 h-4" />
+									{member.email}
+								</a>
+								<a
+									href="#"
+									className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
+								>
+									<ExternalLink className="w-4 h-4" />
+									{member.portfolio}
+								</a>
+							</div>
 
-              <div className="flex gap-3">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
-                  asChild
-                >
-                  <a href={member.social.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-5 h-5" />
-                  </a>
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
-                  asChild
-                >
-                  <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
-                  asChild
-                >
-                  <a href={member.social.instagram} target="_blank" rel="noopener noreferrer">
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                </Button>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+							<div className="flex gap-3">
+								<Button
+									size="sm"
+									variant="outline"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									asChild
+								>
+									<a
+										href={member.social.github}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Github className="w-5 h-5" />
+									</a>
+								</Button>
+								<Button
+									size="sm"
+									variant="outline"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									asChild
+								>
+									<a
+										href={member.social.linkedin}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Linkedin className="w-5 h-5" />
+									</a>
+								</Button>
+								<Button
+									size="sm"
+									variant="outline"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									asChild
+								>
+									<a
+										href={member.social.instagram}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Instagram className="w-5 h-5" />
+									</a>
+								</Button>
+							</div>
+						</Card>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 }
