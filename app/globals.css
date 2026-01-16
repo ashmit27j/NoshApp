@@ -184,7 +184,7 @@
 
   .glass-blob-canvas {
     position: absolute;
-    inset: -10%;
+    inset: -20%;
     pointer-events: none;
     filter: saturate(1.08);
     z-index: 0;
@@ -198,25 +198,25 @@
   .glass-blob {
     position: absolute;
     aspect-ratio: 1 / 1;
-    border-radius: 40%;
-    border: 1px solid rgba(195, 255, 0, 0.12);
+    border-radius: 38% 62% 64% 36% / 45% 38% 62% 55%;
+    border: none;
     background:
-      radial-gradient(circle at 30% 30%, rgba(195, 255, 0, 0.58), rgba(0, 70, 32, 0.12) 55%),
-      radial-gradient(circle at 70% 60%, rgba(140, 255, 120, 0.42), rgba(0, 90, 50, 0.1) 60%),
-      radial-gradient(circle at 45% 70%, rgba(60, 160, 90, 0.35), transparent 65%),
-      linear-gradient(135deg, rgba(195, 255, 0, 0.2), rgba(20, 120, 70, 0.1));
-    opacity: 1;
-    filter: blur(36px);
-    backdrop-filter: blur(24px);
+      radial-gradient(circle at 35% 35%, rgba(195, 255, 0, 0.65), rgba(0, 70, 32, 0.08) 50%),
+      radial-gradient(circle at 72% 58%, rgba(140, 255, 120, 0.48), rgba(0, 90, 50, 0.05) 55%),
+      radial-gradient(circle at 45% 75%, rgba(60, 160, 90, 0.4), transparent 70%),
+      linear-gradient(135deg, rgba(195, 255, 0, 0.25), rgba(20, 120, 70, 0.08));
+    opacity: 0.9;
+    filter: blur(80px);
+    backdrop-filter: blur(40px);
     box-shadow:
-      0 0 60px rgba(195, 255, 0, 0.22),
-      inset 0 0 48px rgba(195, 255, 0, 0.14);
+      0 0 100px rgba(195, 255, 0, 0.22),
+      inset 0 0 80px rgba(195, 255, 0, 0.14);
     mix-blend-mode: screen;
     --tx: 0%;
     --ty: 0%;
     --sc: 1;
-    transform: translate3d(var(--tx), var(--ty), 0) translate3d(var(--hx), var(--hy), 0);
-    transition: transform 380ms ease;
+    --rot: 0deg;
+    transform: translate3d(var(--tx), var(--ty), 0) translate3d(var(--hx), var(--hy), 0) rotate(var(--rot));
   }
 
   .graph-overlay {
@@ -228,53 +228,70 @@
     opacity: calc(0.0 + var(--gridGlow));
     mix-blend-mode: screen;
     filter: drop-shadow(0 0 18px rgba(195, 255, 0, 0.3));
-    transition: opacity 200ms ease, background-position 200ms ease;
     background-position: 0 0, 0 0, 0 0;
   }
 
   .blob-1 {
-    width: 46vw;
-    max-width: 680px;
-    min-width: 280px;
+    width: 65vw;
+    max-width: 950px;
+    min-width: 380px;
     top: -6%;
     left: -10%;
-    animation: none;
+    animation: blobRotateA 28s linear infinite;
   }
 
   .blob-2 {
-    width: 40vw;
-    max-width: 560px;
-    min-width: 260px;
+    width: 60vw;
+    max-width: 850px;
+    min-width: 360px;
     bottom: -4%;
     right: -6%;
-    animation: none;
+    animation: blobRotateB 32s linear infinite;
   }
 
   .blob-3 {
-    width: 34vw;
-    max-width: 500px;
-    min-width: 220px;
+    width: 44vw;
+    max-width: 600px;
+    min-width: 280px;
     top: 16%;
     right: 12%;
-    animation: none;
+    animation: blobRotateC 24s linear infinite;
   }
 
   .blob-4 {
-    width: 30vw;
-    max-width: 440px;
-    min-width: 200px;
+    width: 40vw;
+    max-width: 550px;
+    min-width: 260px;
     bottom: 12%;
     left: 18%;
-    animation: none;
+    animation: blobRotateD 30s linear infinite;
   }
 
   .blob-5 {
-    width: 28vw;
-    max-width: 420px;
-    min-width: 180px;
+    width: 38vw;
+    max-width: 520px;
+    min-width: 240px;
     top: 6%;
     right: -6%;
-    animation: none;
+    animation: blobRotateE 26s linear infinite;
+  }
+
+  .blob-6 {
+    width: 42vw;
+    max-width: 580px;
+    min-width: 260px;
+    bottom: 24%;
+    right: 22%;
+    animation: blobRotateF 28s linear infinite;
+  }
+
+  .blob-7 {
+    width: 36vw;
+    max-width: 500px;
+    min-width: 220px;
+    top: 32%;
+    left: 8%;
+    animation: blobRotateG 32s linear infinite;
   }
 
   .glass-blob-glare {
@@ -309,4 +326,65 @@
   }
 }
 
-/* animations removed for static blobs; hover-driven movement only */
+@keyframes blobRotateA {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: 360deg;
+  }
+}
+
+@keyframes blobRotateB {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: -360deg;
+  }
+}
+
+@keyframes blobRotateC {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: 360deg;
+  }
+}
+
+@keyframes blobRotateD {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: -360deg;
+  }
+}
+
+@keyframes blobRotateE {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: 360deg;
+  }
+}
+
+@keyframes blobRotateF {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: -360deg;
+  }
+}
+
+@keyframes blobRotateG {
+  0% {
+    --rot: 0deg;
+  }
+  100% {
+    --rot: 360deg;
+  }
+}
