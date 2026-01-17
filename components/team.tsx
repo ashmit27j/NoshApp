@@ -23,25 +23,25 @@ const initialTeam: TeamMember[] = [
 	{
 		name: "Sukhada",
 		role: "Android Developer",
-		email: "sukhada@nosh.app",
+		email: "sukhadag35@gmail.com",
 		portfolio: "sukhada.dev",
 		image: undefined,
 		social: {
-			github: "https://github.com",
-			linkedin: "https://linkedin.com",
-			instagram: "https://instagram.com",
+			github: "https://github.com/sukhada35",
+			linkedin: "https://www.linkedin.com/in/sukhada-gulhane-68834a242/",
+			instagram: "https://www.instagram.com/sukhada.gulhane/",
 		},
 	},
 	{
 		name: "Ashmit",
 		role: "iOS Developer",
-		email: "ashmit@nosh.app",
+		email: "ashmit27j@gmail.com",
 		portfolio: "https://ashmit27j.github.io/",
 		image: undefined,
 		social: {
-			github: "https://github.com",
-			linkedin: "https://linkedin.com",
-			instagram: "https://instagram.com",
+			github: "https://github.com/ashmit27j",
+			linkedin: "https://www.linkedin.com/in/ashmitjain/",
+			instagram: "https://www.instagram.com/ashmit.poetry/",
 		},
 	},
 ];
@@ -95,7 +95,7 @@ export default function Team() {
 							className="p-8 glass-card border-primary/20 hover:border-primary hover:glow-green transition-all duration-300"
 						>
 							{/* Team Member Image Upload Section */}
-							<div className="relative mb-6">
+							{/* <div className="relative mb-6">
 								{member.image ? (
 									<div className="relative">
 										<img
@@ -115,16 +115,18 @@ export default function Team() {
 										<div className="flex flex-col items-center justify-center gap-2"></div>
 									</label>
 								)}
-							</div>
+							</div> */}
 
-							<div className="mb-4">
-								<h3 className="text-2xl font-bold text-foreground mb-1">
+							<div className="">
+								<h3 className="text-2xl font-semibold text-foreground mb-1">
 									{member.name}
 								</h3>
-								<p className="text-primary font-medium">{member.role}</p>
+								<p className="text-primary font-normal tracking-wide">
+									{member.role}
+								</p>
 							</div>
 
-							<div className="space-y-3 mb-6">
+							<div className="space-y-3 mb-3">
 								<a
 									href={`mailto:${member.email}`}
 									className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -136,16 +138,16 @@ export default function Team() {
 									href="#"
 									className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm"
 								>
-									<ExternalLink className="w-4 h-4" />
-									{member.portfolio}
+									<ExternalLink className="w-5 h-5" />
+									<span className="text-base">{member.portfolio}</span>
 								</a>
 							</div>
 
 							<div className="flex gap-3">
 								<Button
-									size="sm"
+									size="lg"
 									variant="outline"
-									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary transition-all duration-300 p-6 hover:scale-110"
 									asChild
 								>
 									<a
@@ -153,13 +155,17 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Github className="w-5 h-5" />
+										<img
+											src="/images/Github-Fill.svg"
+											alt="GitHub"
+											className="w-5 h-5"
+										/>
 									</a>
 								</Button>
 								<Button
-									size="sm"
+									size="lg"
 									variant="outline"
-									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary transition-all duration-300 p-6 hover:scale-110"
 									asChild
 								>
 									<a
@@ -167,13 +173,17 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Linkedin className="w-5 h-5" />
+										<img
+											src="/images/Linkedin-Fill-White-Nobg.svg"
+											alt="Linkedin"
+											className="w-5 h-5"
+										/>
 									</a>
 								</Button>
 								<Button
-									size="sm"
+									size="lg"
 									variant="outline"
-									className="border-primary/30 hover:bg-primary/10 hover:border-primary bg-transparent transition-all duration-300 p-2.5"
+									className="border-primary/30 hover:bg-primary/10 hover:border-primary transition-all duration-300 p-6 hover:scale-110"
 									asChild
 								>
 									<a
@@ -181,7 +191,11 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Instagram className="w-5 h-5" />
+										<img
+											src="/images/instagram-white-icon.svg"
+											alt="Instagram"
+											className="w-5 h-5"
+										/>
 									</a>
 								</Button>
 							</div>

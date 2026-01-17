@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Github } from "lucide-react"
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -47,7 +47,7 @@ export default function Header() {
 					{/* CTA Buttons */}
 					<div className="hidden md:flex items-center gap-3">
 						<Link href="#team">
-							<Button className="border-1 border-white text-white bg-black-20 hover:bg-white hover:text-black transition-colors">
+							<Button className="border border-white text-white bg-black-20 hover:bg-white hover:text-black transition-colors">
 								Contact Us
 							</Button>
 						</Link>
@@ -55,7 +55,7 @@ export default function Header() {
 
 					{/* Mobile Menu Button */}
 					<button
-						className="md:hidden"
+						className="md:hidden ml-auto text-white"
 						onClick={() => setIsOpen(!isOpen)}
 						aria-label="Toggle menu"
 					>
@@ -77,16 +77,9 @@ export default function Header() {
 							</Link>
 						))}
 						<div className="flex flex-col gap-2 pt-2">
-							<Button
-								variant="outline"
-								className="w-full bg-transparent"
-								size="icon"
-							>
-								<Github className="w-5 h-5" fill="currentColor" />
-							</Button>
-							<Link href="#downloads" className="w-full">
-								<Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-									Download
+							<Link href="#team" className="w-full">
+								<Button className="w-full border border-white text-white bg-black-20 hover:bg-white hover:text-black transition-colors">
+									Contact Us
 								</Button>
 							</Link>
 						</div>

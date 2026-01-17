@@ -33,11 +33,11 @@ export default function Hero() {
 				</div>
 				{/* Description */}
 				<p className="text-lg sm:text-xl text-white max-w-2xl mx-auto leading-relaxed">
-					Plan your meals intelligently, track your pantry in real-time, and
-					discover recipes that match what you already have. Say goodbye to food
-					waste.
+					Aesthetic meals, organized schedules, and zero last-minute panic.{" "}
+					<br />
+					Why wait? Nosh Now
 				</p>
-				<div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+				<div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
 					<Link href="#downloads">
 						<Button
 							size="lg"
@@ -58,7 +58,11 @@ export default function Hero() {
 			</div>
 
 			{/* Scroll Indicator */}
-			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10" onClick={scrollToFeatures} style={{ cursor: 'pointer' }}>
+			<div
+				className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10"
+				onClick={scrollToFeatures}
+				style={{ cursor: "pointer" }}
+			>
 				<ChevronDown className="text-white w-8 h-8 drop-shadow-lg stroke-2" />
 			</div>
 		</section>

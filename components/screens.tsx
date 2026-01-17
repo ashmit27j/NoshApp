@@ -23,9 +23,7 @@ export default function Screens() {
 					<h2 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">
 						Product Overviews
 					</h2>
-					<p className="text-lg text-muted-foreground">
-						Screenshots from our app
-					</p>
+					<p className="text-lg text-muted-foreground">Demos of our app</p>
 				</div>
 
 				<div className="flex flex-col lg:flex-row gap-10 justify-center items-center">
