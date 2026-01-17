@@ -22,11 +22,11 @@ export default function Header() {
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 group">
 						<Image
-							src="/images/WhiteLogo-nobg.png"
+							src="images/WhiteLogo-nobg.png"
 							alt="Nosh Logo"
-							width={48}
-							height={48}
-							className="w-15 h-15 object-contain"
+							width={32}
+							height={32}
+							className="object-contain w-16 h-16" // Adjusted to fit without stretching
 						/>
 					</Link>
 
