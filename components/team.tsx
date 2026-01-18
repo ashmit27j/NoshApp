@@ -4,7 +4,7 @@ import type React from "react"
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Instagram, X, Heart, ExternalLink } from "lucide-react"
+import { Mail, Heart, ExternalLink } from "lucide-react";
 
 interface TeamMember {
   name: string
@@ -47,29 +47,7 @@ const initialTeam: TeamMember[] = [
 ];
 
 export default function Team() {
-	const [team, setTeam] = useState(initialTeam);
-
-	const handleImageUpload = (
-		index: number,
-		e: React.ChangeEvent<HTMLInputElement>
-	) => {
-		const file = e.target.files?.[0];
-		if (file) {
-			const reader = new FileReader();
-			reader.onload = (event) => {
-				const newTeam = [...team];
-				newTeam[index].image = event.target?.result as string;
-				setTeam(newTeam);
-			};
-			reader.readAsDataURL(file);
-		}
-	};
-
-	const removeImage = (index: number) => {
-		const newTeam = [...team];
-		newTeam[index].image = undefined;
-		setTeam(newTeam);
-	};
+	const [team] = useState(initialTeam);
 
 	return (
 		<section
@@ -156,7 +134,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="images/Github-Fill.svg"
+											src="/images/Github-Fill.svg"
 											alt="GitHub"
 											className="w-5 h-5"
 										/>
@@ -174,7 +152,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="images/Linkedin-Fill-White-Nobg.svg"
+											src="/images/Linkedin-Fill-White-Nobg.svg"
 											alt="Linkedin"
 											className="w-5 h-5"
 										/>
@@ -192,7 +170,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="images/instagram-white-icon.svg"
+											src="/images/instagram-white-icon.svg"
 											alt="Instagram"
 											className="w-5 h-5"
 										/>
