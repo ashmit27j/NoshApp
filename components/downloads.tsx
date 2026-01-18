@@ -90,12 +90,12 @@ export default function Downloads() {
 								asChild
 							>
 								<a
-									href="https://github.com/sukhada35/NoshApp"
+									href="https://github.com/ashmit27j/Nosh"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
 									<img
-										src="/images/Github-Fill.svg"
+										src="images/Github-Fill.svg"
 										alt="GitHub"
 										className="w-5 h-5 mr-2"
 									/>
