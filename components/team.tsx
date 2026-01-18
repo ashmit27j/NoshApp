@@ -156,7 +156,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="/images/Github-Fill.svg"
+											src="images/Github-Fill.svg"
 											alt="GitHub"
 											className="w-5 h-5"
 										/>
@@ -174,7 +174,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="/images/Linkedin-Fill-White-Nobg.svg"
+											src="images/Linkedin-Fill-White-Nobg.svg"
 											alt="Linkedin"
 											className="w-5 h-5"
 										/>
@@ -192,7 +192,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<img
-											src="/images/instagram-white-icon.svg"
+											src="images/instagram-white-icon.svg"
 											alt="Instagram"
 											className="w-5 h-5"
 										/>

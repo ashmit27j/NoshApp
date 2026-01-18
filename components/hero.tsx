@@ -24,7 +24,8 @@ export default function Hero() {
 				{" "}
 				<div className="flex justify-center">
 					<Image
-						src={asset("/images/nosh-20banner-20-20nobg.png")}
+						// src={asset("/images/nosh-20banner-20-20nobg.png")}
+						src="images/nosh-20banner-20-20nobg.png"
 						alt="Nosh"
 						width={350}
 						height={350}

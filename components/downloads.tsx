@@ -54,7 +54,7 @@ export default function Downloads() {
 									rel="noopener noreferrer"
 								>
 									<img
-										src="Github-Fill.svg"
+										src="images/Github-Fill.svg"
 										alt="GitHub"
 										className="w-5 h-5 mr-2"
 									/>
