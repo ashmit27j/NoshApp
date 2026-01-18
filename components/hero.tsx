@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import AnimatedGradientBg from "@/components/animated-gradient-bg";
+import { asset } from "@/lib/asset";
 
 export default function Hero() {
 	const scrollToFeatures = () => {
@@ -23,7 +24,7 @@ export default function Hero() {
 				{" "}
 				<div className="flex justify-center">
 					<Image
-						src="/images/nosh-20banner-20-20nobg.png"
+						src={asset("/images/nosh-20banner-20-20nobg.png")}
 						alt="Nosh"
 						width={350}
 						height={350}

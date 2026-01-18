@@ -17,6 +17,7 @@ export default function AnimatedGradientBg() {
 		function move() {
 			curX += (tgX - curX) / 20;
 			curY += (tgY - curY) / 20;
+			if (!interBubble) return;
 			interBubble.style.transform = `translate(${Math.round(
 				curX
 			)}px, ${Math.round(curY)}px)`;

@@ -1,11 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+const isProd = process.env.NODE_ENV === "production";
+const repo = "NoshApp";
 
-export default nextConfig
+const nextConfig = {
+	output: "export",
+	basePath: isProd ? `/${repo}` : "",
+	assetPrefix: isProd ? `/${repo}/` : "",
+	env: { NEXT_PUBLIC_BASE_PATH: isProd ? `/${repo}` : "" },
+	images: { unoptimized: true },
+};
+export default nextConfig;
