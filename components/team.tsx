@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Mail, Heart, ExternalLink } from "lucide-react";
 
+
 interface TeamMember {
 	name: string;
 	role: string;
@@ -112,7 +113,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<Image
-											src="images/Github-Fill.svg"
+											src="/images/Github-Fill.svg"
 											alt="GitHub"
 											width={20}
 											height={20}
@@ -132,7 +133,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<Image
-											src="images/Linkedin-Fill-White-Nobg.svg"
+											src="/images/Linkedin-Fill-White-Nobg.svg"
 											alt="Linkedin"
 											width={20}
 											height={20}
@@ -152,7 +153,7 @@ export default function Team() {
 										rel="noopener noreferrer"
 									>
 										<Image
-											src="images/instagram-white-icon.svg"
+											src="/images/instagram-white-icon.svg"
 											alt="Instagram"
 											width={20}
 											height={20}
