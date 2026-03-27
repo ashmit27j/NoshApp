@@ -1,11 +1,8 @@
-"use client"
-import { useState } from "react";
 import Image from "next/image";
 
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Mail, Heart, ExternalLink } from "lucide-react";
-
 
 interface TeamMember {
 	name: string;
@@ -48,8 +45,6 @@ const initialTeam: TeamMember[] = [
 ];
 
 export default function Team() {
-	const [team] = useState(initialTeam);
-
 	return (
 		<section
 			id="team"
@@ -67,7 +62,7 @@ export default function Team() {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					{team.map((member, index) => (
+					{initialTeam.map((member, index) => (
 						<Card
 							key={index}
 							className="p-8 glass-card border-primary/20 hover:border-primary hover:glow-green transition-all duration-300"
@@ -112,7 +107,7 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Image
+										<img
 											src="/images/Github-Fill.svg"
 											alt="GitHub"
 											width={20}
@@ -132,7 +127,7 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Image
+										<img
 											src="/images/Linkedin-Fill-White-Nobg.svg"
 											alt="Linkedin"
 											width={20}
@@ -152,7 +147,7 @@ export default function Team() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<Image
+										<img
 											src="/images/instagram-white-icon.svg"
 											alt="Instagram"
 											width={20}

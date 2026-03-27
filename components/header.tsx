@@ -7,16 +7,16 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { label: "Features", href: "#features" },
-    { label: "Screens", href: "#screens" },
-    { label: "Team", href: "#team" },
-  ]
+	const navItems = [
+		{ label: "Features", href: "#features" },
+		{ label: "Screens", href: "#screens" },
+		{ label: "Team", href: "#team" },
+	];
 
-  return (
-		<header className="fixed top-0 z-50 w-full bg-background/60 backdrop-blur-md border-b border-border">
+	return (
+		<header className="fixed top-0 z-50 w-full bg-background border-b border-border">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center h-20">
 					{/* Logo */}

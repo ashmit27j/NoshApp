@@ -1,14 +1,11 @@
-"use client"
-
-import Link from "next/link"
-import Image from "next/image"
-import { Separator } from "@/components/ui/separator"
-import { Github, Figma } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+	const currentYear = new Date().getFullYear();
 
-  const links = [
+	const links = [
 		{ label: "Privacy Policy", href: "#" },
 		{ label: "Terms of Service", href: "#" },
 		{ label: "Copyright", href: "#" },

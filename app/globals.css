@@ -75,7 +75,6 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -143,7 +142,6 @@
     @apply text-base;
   }
 
-  /* Scrollbar Styling */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -162,7 +160,6 @@
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
   }
 
-  /* Firefox Scrollbar */
   * {
     scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
     scrollbar-width: thin;
@@ -174,14 +171,6 @@
     scroll-behavior: smooth;
   }
 
-  .fade-in {
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .slide-up {
-    animation: slideUp 0.7s ease-out;
-  }
-
   .feature-card-hover {
     @apply transition-all duration-300 ease-out;
   }
@@ -190,251 +179,11 @@
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
 
-  .grid-background {
-    background-image: radial-gradient(circle at 20% 50%, rgba(195, 255, 0, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(195, 255, 0, 0.06) 0%, transparent 50%),
-      linear-gradient(
-        0deg,
-        transparent 24%,
-        rgba(195, 255, 0, 0.05) 25%,
-        rgba(195, 255, 0, 0.05) 26%,
-        transparent 27%,
-        transparent 74%,
-        rgba(195, 255, 0, 0.05) 75%,
-        rgba(195, 255, 0, 0.05) 76%,
-        transparent 77%,
-        transparent 100%
-      ),
-      linear-gradient(
-        90deg,
-        transparent 24%,
-        rgba(195, 255, 0, 0.05) 25%,
-        rgba(195, 255, 0, 0.05) 26%,
-        transparent 27%,
-        transparent 74%,
-        rgba(195, 255, 0, 0.05) 75%,
-        rgba(195, 255, 0, 0.05) 76%,
-        transparent 77%,
-        transparent 100%
-      );
-    background-size: 60px 60px;
-  }
-
   .glow-green {
     box-shadow: 0 0 20px rgba(195, 255, 0, 0.4), 0 0 40px rgba(195, 255, 0, 0.2);
   }
-
-  .glow-green-intense {
-    box-shadow: 0 0 30px rgba(195, 255, 0, 0.5), 0 0 60px rgba(195, 255, 0, 0.3);
-  }
-
-  .glass-blob-canvas {
-    position: absolute;
-    inset: -20%;
-    pointer-events: none;
-    filter: saturate(1.08);
-    z-index: 0;
-    --hx: 0%;
-    --hy: 0%;
-    --lx: 50%;
-    --ly: 50%;
-    --gridGlow: 0.22;
-  }
-
-  .glass-blob {
-    position: absolute;
-    aspect-ratio: 1 / 1;
-    border-radius: 38% 62% 64% 36% / 45% 38% 62% 55%;
-    border: none;
-    background:
-      radial-gradient(circle at 35% 35%, rgba(195, 255, 0, 0.65), rgba(0, 70, 32, 0.08) 50%),
-      radial-gradient(circle at 72% 58%, rgba(140, 255, 120, 0.48), rgba(0, 90, 50, 0.05) 55%),
-      radial-gradient(circle at 45% 75%, rgba(60, 160, 90, 0.4), transparent 70%),
-      linear-gradient(135deg, rgba(195, 255, 0, 0.25), rgba(20, 120, 70, 0.08));
-    opacity: 0.9;
-    filter: blur(80px);
-    backdrop-filter: blur(40px);
-    box-shadow:
-      0 0 100px rgba(195, 255, 0, 0.22),
-      inset 0 0 80px rgba(195, 255, 0, 0.14);
-    mix-blend-mode: screen;
-    --tx: 0%;
-    --ty: 0%;
-    --sc: 1;
-    --rot: 0deg;
-    transform: translate3d(var(--tx), var(--ty), 0) translate3d(var(--hx), var(--hy), 0) rotate(var(--rot));
-  }
-
-  .graph-overlay {
-    background-image:
-      repeating-linear-gradient(90deg, rgba(195, 255, 0, 0) 0, rgba(195, 255, 0, 0) 46px, rgba(195, 255, 0, 0.22) 48px, rgba(195, 255, 0, 0.22) 49px, rgba(195, 255, 0, 0) 50px),
-      repeating-linear-gradient(0deg, rgba(195, 255, 0, 0) 0, rgba(195, 255, 0, 0) 46px, rgba(195, 255, 0, 0.22) 48px, rgba(195, 255, 0, 0.22) 49px, rgba(195, 255, 0, 0) 50px),
-      radial-gradient(240px at var(--lx) var(--ly), rgba(195, 255, 0, 0.36), rgba(195, 255, 0, 0.08) 45%, transparent 70%);
-    background-size: 60px 60px, 60px 60px, auto;
-    opacity: calc(0.0 + var(--gridGlow));
-    mix-blend-mode: screen;
-    filter: drop-shadow(0 0 18px rgba(195, 255, 0, 0.3));
-    background-position: 0 0, 0 0, 0 0;
-  }
-
-  .blob-1 {
-    width: 65vw;
-    max-width: 950px;
-    min-width: 380px;
-    top: -6%;
-    left: -10%;
-    animation: blobRotateA 28s linear infinite;
-  }
-
-  .blob-2 {
-    width: 60vw;
-    max-width: 850px;
-    min-width: 360px;
-    bottom: -4%;
-    right: -6%;
-    animation: blobRotateB 32s linear infinite;
-  }
-
-  .blob-3 {
-    width: 44vw;
-    max-width: 600px;
-    min-width: 280px;
-    top: 16%;
-    right: 12%;
-    animation: blobRotateC 24s linear infinite;
-  }
-
-  .blob-4 {
-    width: 40vw;
-    max-width: 550px;
-    min-width: 260px;
-    bottom: 12%;
-    left: 18%;
-    animation: blobRotateD 30s linear infinite;
-  }
-
-  .blob-5 {
-    width: 38vw;
-    max-width: 520px;
-    min-width: 240px;
-    top: 6%;
-    right: -6%;
-    animation: blobRotateE 26s linear infinite;
-  }
-
-  .blob-6 {
-    width: 42vw;
-    max-width: 580px;
-    min-width: 260px;
-    bottom: 24%;
-    right: 22%;
-    animation: blobRotateF 28s linear infinite;
-  }
-
-  .blob-7 {
-    width: 36vw;
-    max-width: 500px;
-    min-width: 220px;
-    top: 32%;
-    left: 8%;
-    animation: blobRotateG 32s linear infinite;
-  }
-
-  .glass-blob-glare {
-    position: absolute;
-    inset: 8% 12% 18%;
-    border-radius: 28%;
-    background: radial-gradient(circle at 55% 45%, rgba(255, 255, 255, 0.18), transparent 60%);
-    mix-blend-mode: soft-light;
-    opacity: 0.3;
-    filter: blur(48px);
-    animation: none;
-  }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes blobRotateA {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: 360deg;
-  }
-}
-
-@keyframes blobRotateB {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: -360deg;
-  }
-}
-
-@keyframes blobRotateC {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: 360deg;
-  }
-}
-
-@keyframes blobRotateD {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: -360deg;
-  }
-}
-
-@keyframes blobRotateE {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: 360deg;
-  }
-}
-
-@keyframes blobRotateF {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: -360deg;
-  }
-}
-
-@keyframes blobRotateG {
-  0% {
-    --rot: 0deg;
-  }
-  100% {
-    --rot: 360deg;
-  }
-}
-/* Animated Gradient Background Styles */
 @keyframes moveInCircle {
   0% {
     transform: rotate(0deg);
@@ -481,25 +230,19 @@
   background: linear-gradient(40deg, #001a1c, #0d2619);
   z-index: 0;
 
-  svg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-  }
-
   .gradients-container {
-    filter: url(#goo) blur(80px);
+    filter: blur(40px);
     width: 100%;
     height: 100%;
-    --circle-size: 80%;
-    --blending: hard-light;
+    --circle-size: 72%;
+    --blending: screen;
+    transform: translateZ(0);
   }
 
   .gradient {
     position: absolute;
     mix-blend-mode: var(--blending);
+    will-change: transform;
   }
 
   .g1 {
@@ -546,28 +289,6 @@
     opacity: 0.7;
   }
 
-  .g5 {
-    background: radial-gradient(circle at center, rgba(58, 90, 32, 0.8) 0, rgba(58, 90, 32, 0) 50%) no-repeat;
-    width: calc(var(--circle-size) * 2);
-    height: calc(var(--circle-size) * 2);
-    top: calc(50% - var(--circle-size));
-    left: calc(50% - var(--circle-size));
-    transform-origin: calc(50% - 800px) calc(50% + 200px);
-    animation: moveInCircle 20s ease infinite;
-    opacity: 1;
-  }
-
-  .interactive-bubble {
-    position: absolute;
-    background: radial-gradient(circle at center, rgba(85, 120, 40, 0.8) 0, rgba(85, 120, 40, 0) 50%) no-repeat;
-    mix-blend-mode: var(--blending);
-    width: 100%;
-    height: 100%;
-    top: -50%;
-    left: -50%;
-    opacity: 0.7;
-  }
-
   .glowing-grid {
     position: absolute;
     top: 0;
@@ -581,6 +302,27 @@
     pointer-events: none;
     z-index: 2;
     mix-blend-mode: screen;
-    opacity: 0.4;
+    opacity: 0.24;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-bg-container .gradients-container {
+    filter: blur(40px);
+  }
+
+  .gradient-bg-container .g3,
+  .gradient-bg-container .g4,
+  .gradient-bg-container .glowing-grid {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-bg-container .gradient,
+  .animate-bounce,
+  .animate-in {
+    animation: none !important;
+    transition: none !important;
   }
 }

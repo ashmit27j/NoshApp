@@ -1,7 +1,5 @@
-	"use client"
-
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Apple, Smartphone } from "lucide-react";
 
 export default function Downloads() {
@@ -34,30 +32,30 @@ export default function Downloads() {
 							Download Nosh from the App Store and start meal planning today.
 							Sync your pantry across all your Apple devices.
 						</p>
+						<Button
+							size="lg"
+							className="flex-1 bg-card text-card-foreground border border-input hover:bg-secondary text-base font-normal px-8 py-4 rounded-lg hover:shadow-lg"
+							asChild
+						>
+							<a
+								href="https://github.com/ashmit27j/Nosh"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									src="images/Github-Fill.svg"
+									alt="GitHub"
+									className="w-5 h-5 mr-2"
+								/>
+								View on GitHub
+							</a>
+						</Button>
 						<div className="flex flex-col gap-2">
 							<Button
 								size="lg"
-								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-primary/80"
+								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-4 rounded-lg hover:shadow-lg"
 							>
 								Download for iOS
-							</Button>
-							<Button
-								size="lg"
-								className="flex-1 bg-card text-card-foreground border border-white hover:bg-card/80 text-base font-normal px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-card/70"
-								asChild
-							>
-								<a
-									href="https://github.com/ashmit27j/Nosh"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img
-										src="images/Github-Fill.svg"
-										alt="GitHub"
-										className="w-5 h-5 mr-2"
-									/>
-									View on GitHub
-								</a>
 							</Button>
 						</div>
 					</Card>
@@ -73,30 +71,30 @@ export default function Downloads() {
 							Get it on Google Play and bring Nosh to your Android device.
 							Manage your meals anywhere, anytime.
 						</p>
+						<Button
+							size="lg"
+							className="flex-1 bg-card text-card-foreground border border-input hover:bg-secondary text-base font-normal px-8 py-4 rounded-lg hover:shadow-lg"
+							asChild
+						>
+							<a
+								href="https://github.com/ashmit27j/Nosh"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<img
+									src="images/Github-Fill.svg"
+									alt="GitHub"
+									className="w-5 h-5 mr-2"
+								/>
+								View on GitHub
+							</a>
+						</Button>
 						<div className="flex flex-col gap-2">
 							<Button
 								size="lg"
-								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-primary/80"
+								className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-base font-semibold px-8 py-4 rounded-lg hover:shadow-lg"
 							>
 								Download for Android
-							</Button>
-							<Button
-								size="lg"
-								className="flex-1 bg-card text-card-foreground border border-white hover:bg-card/80 text-base font-normal px-8 py-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg active:translate-y-1 active:shadow-none active:bg-card/70"
-								asChild
-							>
-								<a
-									href="https://github.com/ashmit27j/Nosh"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<img
-										src="images/Github-Fill.svg"
-										alt="GitHub"
-										className="w-5 h-5 mr-2"
-									/>
-									View on GitHub
-								</a>
 							</Button>
 						</div>
 					</Card>
@@ -110,4 +108,3 @@ export default function Downloads() {
 		</section>
 	);
 }
-

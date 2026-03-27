@@ -1,20 +1,10 @@
-"use client"
-
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import AnimatedGradientBg from "@/components/animated-gradient-bg";
-import { asset } from "@/lib/asset";
 
 export default function Hero() {
-	const scrollToFeatures = () => {
-		const featuresSection = document.getElementById("features");
-		if (featuresSection) {
-			featuresSection.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
 	return (
 		<section className="relative min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden">
 			<AnimatedGradientBg />
@@ -25,12 +15,13 @@ export default function Hero() {
 				<div className="flex justify-center">
 					<Image
 						// src={asset("/images/nosh-20banner-20-20nobg.png")}
-						src="images/nosh-20banner-20-20nobg.png"
+						src="/images/nosh-20banner-20-20nobg.png"
 						alt="Nosh"
 						width={350}
 						height={350}
 						className="w-56 sm:w-72 lg:w-96 h-auto"
 						priority
+						quality={70} // Reduce quality for faster load
 					/>
 				</div>
 				{/* Description */}
@@ -48,25 +39,26 @@ export default function Hero() {
 							Download Now
 						</Button>
 					</Link>
-					<Button
-						size="lg"
-						variant="outline"
-						onClick={scrollToFeatures}
-						className="border-primary/50 text-foreground text-base font-semibold px-8 py-6 rounded-full bg-transparent"
-					>
-						Learn More
-					</Button>
+					<Link href="#features">
+						<Button
+							size="lg"
+							variant="outline"
+							className="border-primary/50 text-foreground text-base font-semibold px-8 py-6 rounded-full bg-transparent"
+						>
+							Learn More
+						</Button>
+					</Link>
 				</div>
 			</div>
 
 			{/* Scroll Indicator */}
-			<div
+			<Link
+				href="#features"
 				className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10"
-				onClick={scrollToFeatures}
-				style={{ cursor: "pointer" }}
+				aria-label="Scroll to features"
 			>
 				<ChevronDown className="text-white w-8 h-8 drop-shadow-lg stroke-2" />
-			</div>
+			</Link>
 		</section>
 	);
 }
